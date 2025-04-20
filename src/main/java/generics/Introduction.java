@@ -42,16 +42,13 @@ public class Introduction {
 		int numGeneric = myGenericClassInt.getObject(); // Nessun cast necessario
 		System.out.println(numGeneric);
 	}
-	
 }
 
 class MyGenericClass<T> {
 	private T obj;
-
 	public T getObject() {
 		return obj;
 	}
-
 	public void setObject(T obj) {
 		this.obj = obj;
 	}
