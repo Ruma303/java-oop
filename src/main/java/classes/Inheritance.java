@@ -96,38 +96,38 @@ final class CannotBeExtended {}
 // class CannotExtend extends CannotBeExtended {};
 
 // Membri di istanza e di classe
-class Auto2 {
+class Veicolo {
     // Campo statico: comune a tutte le istanze
     public static String marca = "Fiat";
 
     // Campo di istanza: unico per ogni istanza
     private String colore;
 
-    // Costruttore per impostare il colore dell'auto
-    public Auto2(String colore) {
+    // Costruttore per impostare il colore dell'veicolo
+    public Veicolo(String colore) {
         this.colore = colore;
     }
 
-    // Metodo di istanza per ottenere il colore dell'auto
+    // Metodo di istanza per ottenere il colore dell'veicolo
     public String getColore() {
         return colore;
     }
 
-    // Metodo statico per ottenere la marca dell'auto
+    // Metodo statico per ottenere la marca dell'veicolo
     public static String getMarca() {
         return marca;
     }
 
     public static void main(String[] args) {
         // Accesso al membro statico senza creare un'istanza
-        System.out.println("Marca dell'auto: " + Auto2.getMarca());
+        System.out.println("Marca dell'veicolo: " + Veicolo.getMarca());
 
         // Creazione di istanze con differenti colori
-        Auto2 auto1 = new Auto2("rosso");
-        Auto2 auto2 = new Auto2("blu");
+        Veicolo veicolo1 = new Veicolo("rosso");
+        Veicolo veicolo2 = new Veicolo("blu");
 
         // Accesso ai membri di istanza tramite oggetti
-        System.out.println("Auto1 ha colore: " + auto1.getColore());
-        System.out.println("Auto2 ha colore: " + auto2.getColore());
+        System.out.println("Veicolo1 ha colore: " + veicolo1.getColore());
+        System.out.println("Veicolo2 ha colore: " + veicolo2.getColore());
     }
 }

@@ -14,7 +14,7 @@ public enum Abstract {
     },
     MOLTIPLICAZIONE {
         public double esegui(double x, double y) {
-            return x * y;
+            return (x * y) - 10;
         }
     },
     DIVISIONE {
