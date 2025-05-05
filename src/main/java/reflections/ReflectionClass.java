@@ -128,6 +128,10 @@ public class ReflectionClass {
             String str = "Hello, World!";
             String result = (String) substring.invoke(str, 7, 12);
 
+            // Invocazione metodi statici
+            Method staticMethod = clazz.getMethod("valueOf", int.class);
+            String staticResult = (String) staticMethod.invoke(null, 42); // null per i metodi statici
+
             System.out.println("Risultato: " + result);  // Output: World
         } catch (Exception e) {
             e.printStackTrace();

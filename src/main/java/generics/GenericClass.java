@@ -1,29 +1,33 @@
 package generics;
 
-class MyClass {
+class NoGeneric {
 	private Object obj;
-	
-	public Object getObject() {
+	public Object getObject() { return obj;	}
+	public void setObject(Object obj) { this.obj = obj; }
+}
+
+class MyGenericClass<T> {
+	private T obj;
+	public T getObject() {
 		return obj;
 	}
-	
-	public void setObject(Object obj) {
+	public void setObject(T obj) {
 		this.obj = obj;
 	}
 }
 
-public class Introduction {
+public class GenericClass {
 	public static void main(String[] args) {
 		
 		// Senza Generics
-		MyClass myClass = new MyClass();
-		myClass.setObject("Hello");
-		String str = (String) myClass.getObject(); // Cast necessario
+		NoGeneric noGeneric = new NoGeneric();
+		noGeneric.setObject("Hello");
+		String str = (String) noGeneric.getObject(); // Cast necessario
 		System.out.println(str);
 
-		myClass.setObject(123); // Ora può contenere un intero
-		int num = (Integer) myClass.getObject(); // Cast necessario
-		//str = (String) myClass.getObject(); // Errore di compilazione
+		noGeneric.setObject(123); // Ora può contenere un intero
+		int num = (Integer) noGeneric.getObject(); // Cast necessario
+		//str = (String) noGeneric.getObject(); // Errore di compilazione
 		System.out.println(num);
 		
 		
@@ -41,15 +45,5 @@ public class Introduction {
 		myGenericClassInt.setObject(123); // Ora può contenere un intero
 		int numGeneric = myGenericClassInt.getObject(); // Nessun cast necessario
 		System.out.println(numGeneric);
-	}
-}
-
-class MyGenericClass<T> {
-	private T obj;
-	public T getObject() {
-		return obj;
-	}
-	public void setObject(T obj) {
-		this.obj = obj;
 	}
 }
