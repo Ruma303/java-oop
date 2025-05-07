@@ -133,11 +133,9 @@ class Methods {
     static <T extends Number> double half(T t) {
         return t.doubleValue() / 2.0;
     }
-
     static <T extends Comparable<T>> T max(T a, T b) {
         return (a.compareTo(b) > 0) ? a : b;
     }
-
     static <T extends Comparable<T>> T min(T a, T b) {
         return (a.compareTo(b) < 0) ? a : b;
     }
@@ -150,17 +148,13 @@ interface MyInterface<T extends Number> {
 
 class GenericBox<T> {
     private T content;
-
     public GenericBox() {}
-
     public GenericBox(T content) {
         this.content = content;
     }
-
     public void set(T content) {
         this.content = content;
     }
-
     public T get() {
         return content;
     }
